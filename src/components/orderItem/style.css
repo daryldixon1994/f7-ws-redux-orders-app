@@ -1,0 +1,18 @@
+#order-item {
+  border: 1px grey solid;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr/1fr 1fr 1fr;
+  justify-items: center;
+  justify-content: space-between;
+  column-gap: 20px;
+  row-gap: 15px;
+  padding: 10px;
+  border-radius: 15px;
+}
+#order-item h6,
+#order-item h5 {
+  margin: 0;
+}
+#order-item h6 {
+  color: #be0276;
+}

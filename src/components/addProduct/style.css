@@ -1,0 +1,20 @@
+form {
+  width: 30%;
+  display: grid;
+  grid-template: 1fr/2fr 1fr;
+  gap: 15px;
+}
+form input {
+  all: unset;
+  border-bottom: 1px black solid;
+  padding: 3px 8px;
+}
+form button {
+  all: unset;
+  background-color:mediumpurple;
+  color: white;
+  text-align: center;
+  padding: 3px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
