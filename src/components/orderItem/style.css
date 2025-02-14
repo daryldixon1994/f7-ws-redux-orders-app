@@ -16,3 +16,8 @@
 #order-item h6 {
   color: #be0276;
 }
+#icons-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

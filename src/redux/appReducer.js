@@ -3,7 +3,7 @@ const initialState = {
     {
       id: "U8dAD",
       product: {
-        name: "Lenovo Laptop",
+        pName: "Lenovo Laptop",
         price: 1500,
         qte: 1,
       },
@@ -18,7 +18,7 @@ const initialState = {
     {
       id: "wV0QDlQ",
       product: {
-        name: "Paco Rabbanne:PHANTOM",
+        pName: "Paco Rabbanne:PHANTOM",
         price: 544,
         qte: 2,
       },
@@ -33,7 +33,7 @@ const initialState = {
     {
       id: "Weelvb9saFx",
       product: {
-        name: "CRK: Totti",
+        pName: "CRK: Totti",
         price: 349,
         qte: 1,
       },
@@ -49,6 +49,36 @@ const initialState = {
 };
 
 const appReducer = (state = initialState, action) => {
+  console.log(action);
+  let { type, payload } = action;
+  if (type === "ADD_NEW_PRODUCT") {
+    return {
+      ...state,
+      orders: [...state.orders, payload],
+    };
+  }
+  if (type === "SET_DELIVERED") {
+    return {
+      ...state,
+      orders: state.orders.map((elt) =>
+        elt.id === payload ? { ...elt, status: "Delivered" } : elt
+      ),
+    };
+  }
+  if (type === "SET_REJECTED") {
+    return {
+      ...state,
+      orders: state.orders.map((elt) =>
+        elt.id === payload ? { ...elt, status: "Rejected" } : elt
+      ),
+    };
+  }
+  if (type === "DELETE_ORDER") {
+    return {
+      ...state,
+      orders: state.orders.filter((elt) => elt.id !== payload),
+    };
+  }
   return state;
 };
 

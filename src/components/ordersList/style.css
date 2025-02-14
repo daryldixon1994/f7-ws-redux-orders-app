@@ -1,8 +1,11 @@
+#products-container {
+  width: 50%;
+}
 #products {
   margin-top: 25px;
-  width: 50%;
+  width: 100%;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 25px;
   height: 380px;
   overflow-y: scroll;
@@ -22,4 +25,11 @@
   background-color: #9470db71;
   outline: 1px solid slategrey;
   border-radius: 5px;
+}
+#products-container form {
+  /* border: 1px black solid; */
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+  gap: 15px;
 }
